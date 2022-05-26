@@ -198,7 +198,7 @@ object Items extends ItemAPI {
   def createConfiguredDrone(): ItemStack = {
     val data = new DroneData()
 
-    data.name = "Crecopter"
+    data.name = "创造无人机"
     data.tier = Tier.Four
     data.storedEnergy = Settings.get.bufferDrone.toInt
     data.components = Array(
@@ -243,7 +243,7 @@ object Items extends ItemAPI {
   def createConfiguredRobot(): ItemStack = {
     val data = new RobotData()
 
-    data.name = "Creatix"
+    data.name = "机器人"
     data.tier = Tier.Four
     data.robotEnergy = Settings.get.bufferRobot.toInt
     data.totalEnergy = data.robotEnergy
@@ -520,7 +520,7 @@ object Items extends ItemAPI {
     val luaBios = {
       val code = new Array[Byte](4 * 1024)
       val count = OpenComputers.getClass.getResourceAsStream(Settings.scriptPath + "bios.lua").read(code)
-      registerEEPROM("EEPROM (Lua BIOS)", code.take(count), null, readonly = false)
+      registerEEPROM("带电可擦可编程只读存储器 (Lua BIOS)", code.take(count), null, readonly = false)
     }
     Recipes.addStack(luaBios, Constants.ItemName.LuaBios)
 
